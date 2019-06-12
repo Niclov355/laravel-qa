@@ -16,3 +16,5 @@
 // });
 
 Route::get('/questions', 'questionController@index');
+
+Route::get('/questions/1', 'questionController@show');
