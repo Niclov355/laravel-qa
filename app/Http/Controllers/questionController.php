@@ -26,7 +26,8 @@ class questionController extends Controller
     public function show()
     {
         // return 'This is a detail of a question';
-        
+        return $view = view('questions/show');
+
         $table = DB::table('questions')
             ->where('id', 1)
             ->get();

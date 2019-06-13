@@ -15,8 +15,8 @@
 //     return view('welcome');
 // });
 
-Route::get('/questions', 'questionController@index');
+Route::get('/questions/1', 'questionController@index');
 
-Route::get('/questions/1', 'questionController@show');
+Route::get('/questions', 'questionController@show');
 
 Route::get('/categories', 'CategoryController@index');
