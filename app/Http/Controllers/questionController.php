@@ -16,4 +16,9 @@ class questionController extends Controller
     {
         return 'This is a detail of a question';
     }
+
+    // public function test()
+    // {
+    //     DB::table('questions')
+    // }
 }
