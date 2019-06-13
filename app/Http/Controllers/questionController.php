@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\questions;
+use App\answers;
 
 class questionController extends Controller
 {
@@ -14,7 +16,11 @@ class questionController extends Controller
         $table = DB::table('questions')
             ->orderBy('created_at','desc')
             ->get();
-        var_dump($table);
+        // var_dump($table);
+
+        return $view = view('questions/index');
+
+        // questions::orderBy('created_at', 'desc')->get();  /this is eloquent, does need $table
     }
 
     public function show()
@@ -26,9 +32,14 @@ class questionController extends Controller
             ->get();
         var_dump($table);
 
+        // questions:: where('id', 1)->get();  /eloquent
+        // dd($table->$answer);     /this shows us the result beacuse of what's in questions.php
+
         $table2= DB::table('answers')
-        ->where('question_id',1)
+        ->where('question_id', 1)
         ->get();
+
+        // questions::where('question_id', 1)->get();  eloquent
 
         $result = $table2;
         var_dump($result);
@@ -38,11 +49,6 @@ class questionController extends Controller
         ->get();
         var_dump($table3);
 
-
+        // answers::orderBy('created_at', 'desc')->get(); eloquent
     }
-
-    // public function test()
-    // {
-    //     DB::table('questions')
-    // }
 }
