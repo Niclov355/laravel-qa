@@ -20,3 +20,6 @@ Route::get('/questions', 'questionController@index');
 Route::get('/questions/1', 'questionController@show');
 
 Route::get('/categories', 'CategoryController@index');
+
+Route::get('/answers/1', 'AnswerController@show');
+Route::post('/answers/1', 'AnswerController@vote');

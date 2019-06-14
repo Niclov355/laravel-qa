@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Question extends Model
+class Vote extends Model
 {
     public function answers()
     {
-        return $this->hasMany('App\Answer');
+        return $this->belongsTo('App\Answer');
     }
 }
