@@ -28,9 +28,12 @@ class questionController extends Controller
         // return 'This is a detail of a question';
         $questions = DB::table('questions')
         ->get();
+
+        $answers = DB::table('answers')
+        ->get();
     
 
-        return $view = view('questions/show',compact('questions'));
+        return $view = view('questions/show',compact('questions','answers'));
 
         $table = DB::table('questions')
             ->where('id', 1)
